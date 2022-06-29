@@ -1,0 +1,46 @@
+syntax = "proto3";
+package mtuciflix.api;
+option java_multiple_files = true;
+
+message MediaInfo{
+  int64 mediaId = 1;
+  bytes mediaPreview = 2;
+  bytes mediaDescription = 3;
+}
+
+message MediaMetaData{
+  int64 mediaId = 1;
+  string mediaLength = 2;
+  string director = 3;
+  int64 previewFullScreenId = 4; //videoPreview
+}
+
+message GetMediaUtilRequest{
+  int32 clientId = 1;
+  int64 mediaId = 3;
+}
+
+message GetMediaChunkResponse{
+  int32 clientId = 1;
+  map<int32, int64> mediaChunk = 3; //int32 for mediaId int64 for mediaIdImgPreview
+}
+
+message GetMediaInfoResponse{
+  int32 mediaId = 1;
+  string title = 2;
+  string description = 3;
+  string director = 4;
+}
+
+message GetMediaMetaInfoResponse{
+  int32 mediaId = 1;
+  MediaMetaData mediaMetaData = 2;
+}
+
+service MultiMediaInfoProvider {
+  rpc getListOfAvailableMedia(GetMediaUtilRequest) returns (GetMediaChunkResponse);
+
+  rpc getMediaInfo(GetMediaUtilRequest) returns (GetMediaInfoResponse);
+
+  rpc getMediaMetaInfo(GetMediaUtilRequest) returns (GetMediaMetaInfoResponse);
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mtuciflix.mtuciflixui.forms.MainScreenController">
+   <children>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #000;">
+        <buttons>
+            <Button minWidth="58.0" mnemonicParsing="false" onMouseClicked="#hide" prefHeight="38.0" style="-fx-background-color: #000;" text="─" textFill="#faf9f9">
+               <font>
+                  <Font name="Neo Sans" size="20.0" />
+               </font>
+            </Button>
+            <Button minWidth="62.0" mnemonicParsing="false" onMouseClicked="#fullscreen" prefHeight="38.0" style="-fx-background-color: #000;" text="■" textAlignment="CENTER" textFill="#faf9f9">
+               <font>
+                  <Font name="Neo Sans" size="18.0" />
+               </font>
+            </Button>
+            <Button minWidth="63.0" mnemonicParsing="false" onMouseClicked="#close" prefHeight="18.0" style="-fx-background-color: #000;" textFill="#faf9f9">
+               <font>
+                  <Font name="Neo Sans" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="14.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/cross.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+        </buttons>
+      </ButtonBar>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="844.0" prefWidth="298.0" style="-fx-background-color: #000;">
+               <children>
+                  <AnchorPane layoutX="2.0" layoutY="5.0" prefHeight="102.0" prefWidth="180.0">
+                     <children>
+                        <ImageView fitHeight="96.0" fitWidth="180.0" layoutX="94.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="libraryButton" layoutX="75.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#showUserLibrary" prefHeight="50.0" prefWidth="147.0" style="-fx-background-color: #000;" text="Library" textOverrun="CLIP">
+                     <textFill>
+                        <RadialGradient centerX="0.4779735682819383" centerY="1.0" focusAngle="160.08" focusDistance="-0.22018345124130945" radius="0.47247709046810044">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <font>
+                        <Font name="Neo Sans" size="23.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/library.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="favoriteButton" layoutX="75.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#showUserFavorite" prefHeight="47.0" prefWidth="147.0" style="-fx-background-color: #000;" text="Favorite">
+                     <font>
+                        <Font name="Neo Sans" size="23.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.4779735682819383" centerY="0.9128787851694858" focusAngle="160.08" focusDistance="-0.22018345124130945" radius="0.47247709046810044">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/fafirute.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane style="-fx-background-color: #141414;">
+               <children>
+                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="44.0" prefWidth="806.0" style="-fx-background-color: #000;" />
+                  <ScrollPane fx:id="scrollBar" hbarPolicy="NEVER" hmax="100.0" layoutY="44.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="797.0" prefWidth="806.0" style="-fx-background-color: transparent; -fx-background: transparent;" vbarPolicy="NEVER" vmax="100.0">
+                     <content>
+                        <TilePane fx:id="mediaList" hgap="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="798.0" prefWidth="805.0" vgap="12.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</VBox>

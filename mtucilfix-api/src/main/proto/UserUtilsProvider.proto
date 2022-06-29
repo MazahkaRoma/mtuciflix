@@ -1,0 +1,28 @@
+syntax = "proto3";
+package mtuciflix.api;
+option java_multiple_files = true;
+
+message CheckRightsRequest{
+  int32 clientId = 1;
+}
+
+message CheckRightsResponse{
+  int32 clientId = 1;
+  int32 Rights = 2;
+}
+
+message CheckUserLogInRequest{
+  string login = 1;
+  string password = 2;
+}
+
+message CheckUserLogInResponse{
+  int32 clientId = 1;
+  bool isLogin = 2;
+}
+
+service UserUtils{
+  rpc login(CheckUserLogInRequest) returns (CheckUserLogInResponse);
+  rpc checkRight(CheckRightsRequest) returns (CheckRightsResponse);
+  rpc register(CheckUserLogInRequest) returns (CheckUserLogInResponse);
+}

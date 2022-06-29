@@ -1,0 +1,23 @@
+syntax = "proto3";
+package mtuciflix.api;
+option java_multiple_files = true;
+
+message WriteMediaInfoRequest{
+  int32 mediaId = 1;
+  int32 mediaImgPreviewId = 2;
+  int32 mediaFullscreenPreviewId = 3;
+  string mediaTitle = 4;
+  string director = 5;
+  bool isAvailable = 6;
+  string  mediaDescription = 7;
+
+}
+
+message WriteMediaInfoResponse{
+  bool result = 1;
+}
+
+
+service AdminTool{
+  rpc writeMediaInfo(WriteMediaInfoRequest) returns (WriteMediaInfoResponse);
+}
